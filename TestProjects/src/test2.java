@@ -46,6 +46,7 @@ public class test2 {
 			}
 			
 		}while(option != 'q');
+		scan.close();
 		
 	}
 	
