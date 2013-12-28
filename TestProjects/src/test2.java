@@ -4,11 +4,12 @@ import java.util.Scanner;
 public class test2 {
 	
 	static int balance;
+	static Scanner scan = new Scanner(System.in);
 	
 	public static void main(String[] args){
 		
 		char option = '\0';
-		Scanner scan = new Scanner(System.in);
+		
 		
 		//Initialize Balance
 		balance = 0;
@@ -74,6 +75,7 @@ public class test2 {
 	 * The code shall display the balance of the user
 	 */
 	static void viewBalance(){
+		System.out.println("Current balance: " + balance);
 		
 	}
 	
@@ -87,6 +89,10 @@ public class test2 {
 	 * <i>It is always assumed that the user has the proper amount on hand to deposit.</i>
 	 */
 	static void makeDeposit(){
+		System.out.println("How much would you like to deposit?");
+		int deposit = scan.nextInt();
+		balance += deposit;
+		System.out.println("You have deposited: " + deposit);
 		
 	}
 	
@@ -100,6 +106,18 @@ public class test2 {
 	 * <i>There should be error checking here, as a negative balance is not allowed.</i>
 	 */
 	static void makeWithdrawal(){
+		
+		System.out.println("How much would you like to withdrawal?");
+		int withdraw = scan.nextInt();
+		
+		if(balance - withdraw < 0){
+			System.out.println("Insufficient funds...");
+			
+		}else{
+			balance -= withdraw;
+			System.out.println("You have withdrawn: " + withdraw);
+		}
+		
 		
 	}
 }
