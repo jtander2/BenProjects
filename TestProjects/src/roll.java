@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -75,7 +76,15 @@ public class roll {
 	static int performRoll(int diceNum, int diceSize, int modifier) {
 		int result = 0;
 		
+		Random rand = new Random();
+		result += modifier;
+		for(int i = 0; i < diceNum; i++){
+			result += rand.nextInt(diceSize);
+			
+		}
+		System.out.println("Dice roll is: " + result + "\n");
 		return result;
+		
 	}
 
 	public static void main(String[] args){
