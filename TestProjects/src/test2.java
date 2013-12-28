@@ -91,8 +91,11 @@ public class test2 {
 	static void makeDeposit(){
 		System.out.println("How much would you like to deposit?");
 		int deposit = scan.nextInt();
-		balance += deposit;
-		System.out.println("You have deposited: " + deposit);
+		if(deposit < 0){
+			System.out.println("You can not deposit a negative amount...");
+		}else{
+			balance += deposit;
+		}
 		
 	}
 	
